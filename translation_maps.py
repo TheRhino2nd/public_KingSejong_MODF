@@ -10,8 +10,8 @@ hourley_data_translation_map = {
     'RSW'       :  'rsds', # taken from HK table
     #'wind_east'  :  'ua', # taken from HK table
     #'wind_north'  :  'va', #taken from HK table       
-    'wind_east'   : 'ua',
-    'wind_north'  : 'va'
+    'wind_east'   : 'ua',   # taken from HK table
+    'wind_north'  : 'va'    # taken from HK table
   }
 
 
@@ -33,8 +33,8 @@ ten_minute_data_translation_map = {
     'Pmin'              : 'ps_min', #underscore variant of HK table
     'UVA'               : 'rsds_uva', #underscore variant of HK table
     'UVB (time + 20var)': 'rsds_uvb', #underscore variant of HK table
-    'Eastwind'          :  'ua', # taken from HK table
-    'Westwind'          :  'va', #taken from HK table 
+    'wind_east'          :  'ua', # taken from HK table
+    'wind_north'          :  'va', #taken from HK table 
 
 
 }

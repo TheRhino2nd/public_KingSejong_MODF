@@ -1,9 +1,11 @@
 # In this section I prepare the metadata dictionaries:
-# I have different data types:
+
+# Metadata dictionaries are prepared manually.
+# I have two different data types:
 # 1. hourly data
 # 2. 10minute data
-# 3. Radiosonde data
-# 4.....
+#
+# 
 
 
 
@@ -14,76 +16,80 @@ import global_variables as globals
 hourly_metadata = {
     'File_type': 'Hourly',
     'Description': 'Metadata for hourly QC observation data from KIng Sejong Station',
-    'Citation': {'Publications': '.....'},
-    'Coverage': {'DATE/TIME START': '',  'DATE/TIME END': ''},
-    'Station_Elevation': '00',
+    'Citation': {'Publications': 'Park et al.(2013). Heat flux variations over sea ice observed at the coastal area of the Sejong Station, Antarctica. Asia-Pacific J. Atmos. Sci. 49, 443?450. doi: 10.1007/s13143-013-0040-z'},
+    'Coverage': {'DATE/TIME START': 'May 1st 1988',  'DATE/TIME END': 'Ongoing'},
+    'Station_Elevation': '7.1',
     'AVAILABLE_PARAMETERS': ['Timestamp', 'WS', 'WD', 'Ta', 'RH','SLP', 'RSW'],
     'Timestamp': {'VariableName': 'time60', 
-                  'SHORTNAME': '',
+                  'SHORTNAME': 'DateTime',
                        'LONGNAME': 'Valid time for observations with 60-minute cadence', 
                        'delta_t': '0000-00-00 01:00:00',
                        'UNITS': 'minutes since',
                        'standard_name': 'time',
                         'calendar': 'standard'
                         },
-    'WS' : {
-        'SHORTNAME': '',
+    'WS': {
+        'SHORTNAME': 'WS',
         'LONGNAME': 'Wind Speed',
+        'standard_name': '',
         'UNITS': 'm/s',
-        'missing_value': '',
+        'missing_value' : 'NaN',
         'actual_range': '',
-        'instrument': ''
+        'INSTRUMENT': ''
     },
-    'WD' :{
-        'SHORTNAME': '',
+
+    'WD': {
+        'SHORTNAME': 'WD',
         'LONGNAME': 'Wind Direction',
+        'standard_name': 'Wdir',
         'UNITS': 'degrees',
-        'missing_value': '',
+        'missing_value' : 'NaN',
         'actual_range': '',
-        'instrument': ''
-        },
+        'INSTRUMENT': ''
+    },
+
 
     'Ta': {
-        'SHORTNAME': '',
+        'SHORTNAME': 'Ta',
         'LONGNAME': 'Temperature',
         'standard_name': 'air_temperature',
         'UNITS': 'degC',
-        'missing_value' : '',
-        'actual_range': '',
-        'instrument': ''
+        'missing_value' : 'NaN',
+        'actual_range': '-30,20',
+        'INSTRUMENT': 'HMP155'
     },
     'RH': {
-        'SHORTNAME': '',
+        'SHORTNAME': 'RH',
         'LONGNAME': 'Relative humidity',
         'standard_name': 'relative_humidity',
         'UNITS': '%',
-        'missing_value' : '',
-        'actual_range': '',
-        'instrument': ''
+        'missing_value' : 'NaN',
+        'actual_range': '0,100',
+        'INSTRUMENT': 'HMP155'
 
     },
 
     'SLP': {
-        'SHORTNAME': '',
+        'SHORTNAME': 'SLP',
         'VariableName': 'psl',
         'LONGNAME': 'Mean sea level pressure',
         'standard_name': 'air_pressure_at_mean_sea_level',
         'UNITS': 'hPa',
-        'missing_value' : '',
-        'actual_range': '',
-        'instrument': ''
+        'missing_value' : 'NaN',
+        'actual_range': '920,1040',
+        'INSTRUMENT': 'PTB110'
 
     },
     
     'RSW':{
-        'SHORTNAME': '',
+        'SHORTNAME': 'RSW',
         'VariableName': 'rsdt',
-        'LONGNAME': 'Top-of-atmosphere incoming short-wave radiation',
-        'standard_name': 'toa_incoming_shortwave_flux',
+        'LONGNAME': 'Ground Level incoming short-wave radiation',
+        'standard_name': 'Ground level_incoming_shortwave_flux',
         'UNITS': 'W m-2',
-        'missing_value' : '',
-        'actual_range': '',
-        'instrument': ''
+        'missing_value' : 'NaN',
+        'actual_range': '0, 1000',
+        'INSTRUMENT': 'CMP21'
     },
 
 }
@@ -92,9 +98,9 @@ hourly_metadata = {
 ten_minute_cadence_metadata = {
     'File_type': 'Ten_minute_cadence',
     'Description': 'Metadata for ten minute cadence QC observation data from KIng Sejong Station',
-    'Citation': {'Publications': '.....'},
-    'Coverage': {'DATE/TIME START': '',  'DATE/TIME END': ''},
-    'Station_Elevation': '00',
+    'Citation': {'Publications': 'Park et al.(2013). Heat flux variations over sea ice observed at the coastal area of the Sejong Station, Antarctica. Asia-Pacific J. Atmos. Sci. 49, 443?450. doi: 10.1007/s13143-013-0040-z'},
+    'Coverage': {'DATE/TIME START': 'May 1st 1988',  'DATE/TIME END': 'Ongoing'},
+    'Station_Elevation': '7.1',
     'AVAILABLE_PARAMETERS': ['Timestamp', 'WS', 'WD', 'Ta', 'RH', 'Td', 'PstnA1', 'SLP', 'Prcp', 'RSW', 'UV', 'Rlw', 'Rnet', 'WSmax', 'Tmax', 'Tmin', 'RHmin', 'Pmax', 'Pmin', 'UVA', 'UVB (time + 20var)'],
     'Timestamp':{'VariableName': 'time10', 
                   'SHORTNAME': '',
@@ -103,212 +109,217 @@ ten_minute_cadence_metadata = {
                        'UNITS': 'minutes since',
                        'standard_name': 'time',
                         'calendar': 'standard'},
-    'WS' : {
-        'SHORTNAME': '',
+
+    'WS': {
+        'SHORTNAME': 'WS',
         'LONGNAME': 'Wind Speed',
+        'standard_name': '',
         'UNITS': 'm/s',
-        'missing_value': '',
+        'missing_value' : 'NaN',
         'actual_range': '',
-        'instrument': ''
+        'INSTRUMENT': ''
     },
-    'WD' :{
-        'SHORTNAME': '',
+
+    'WD': {
+        'SHORTNAME': 'WD',
         'LONGNAME': 'Wind Direction',
+        'standard_name': 'Wdir',
         'UNITS': 'degrees',
-        'missing_value': '',
+        'missing_value' : 'NaN',
         'actual_range': '',
-        'instrument': ''
-        },
+        'INSTRUMENT': ''
+    },
+ 
 
     'Ta': {
-        'SHORTNAME': '',
+        'SHORTNAME': 'Ta',
         'LONGNAME': 'Temperature',
         'standard_name': 'air_temperature',
         'UNITS': 'degC',
-        'missing_value' : '',
-        'actual_range': '',
-        'instrument': ''
+        'missing_value' : 'NaN',
+        'actual_range': '-30,20',
+        'INSTRUMENT': 'HMP155'
     },
     'RH': {
-        'SHORTNAME': '',
+        'SHORTNAME': 'RH',
         'LONGNAME': 'Relative humidity',
         'standard_name': 'relative_humidity',
         'UNITS': '%',
-        'missing_value' : '',
-        'actual_range': '',
-        'instrument': ''
+        'missing_value' : 'NaN',
+        'actual_range': '0,100',
+        'INSTRUMENT': 'HMP155'
 
     },
     'Td': {
-        'SHORTNAME': '',
+        'SHORTNAME': 'Td',
         'LONGNAME': 'Dew-point temperature',
         'standard_name': 'dew_point_temperature',
         'UNITS': 'degC',
-        'missing_value' : '',
-        'actual_range': '',
-        'instrument': ''
+        'missing_value' : 'NaN',
+        'actual_range': '-50,20',
+        'INSTRUMENT': 'HMP155'
     },
     'PstnA1': {
-        'SHORTNAME': '',
+        'SHORTNAME': 'PstnA1',
         'LONGNAME': 'Surface pressure',
     'standard_name': 'surface_air_pressure',
     'UNITS': 'hPa',
-    'missing_value' : '',
-    'actual_range': '',
-    'instrument': ''
+    'missing_value' : 'NaN',
+    'actual_range': '920,1040',
+    'INSTRUMENT': 'PTB110'
     },
 
     'SLP': {
-        'SHORTNAME': '',
+        'SHORTNAME': 'SLP',
         'VariableName': 'psl',
         'LONGNAME': 'Mean sea level pressure',
         'standard_name': 'air_pressure_at_mean_sea_level',
         'UNITS': 'hPa',
-        'missing_value' : '',
-        'actual_range': '',
-        'instrument': ''
+        'missing_value' : 'NaN',
+        'actual_range': '920,1040',
+        'INSTRUMENT': 'PTB110'
 
     },
 
     'Prcp': {
-        'SHORTNAME': '',
+        'SHORTNAME': 'Prcp',
         'VariableName': 'ppn',
         'LONGNAME': 'depth of water-equivalent precipitation',
-        'standard_name': '',
+        'standard_name': 'Precipitation amount',
         'UNITS': 'mm',
-        'missing_value' : '',
-        'actual_range': '',
-        'instrument': ''
+        'missing_value' : 'NaN',
+        'actual_range': '0,10',
+        'INSTRUMENT': 'Tipping Bucket'
 
     },
 
     'RSW':{
-        'SHORTNAME': '',
+        'SHORTNAME': 'RSW',
         'VariableName': 'rsdt',
-        'LONGNAME': 'Top-of-atmosphere incoming short-wave radiation',
-        'standard_name': 'toa_incoming_shortwave_flux',
+        'LONGNAME': 'Ground level incoming short-wave radiation',
+        'standard_name': 'Ground level_incoming_shortwave_flux',
         'UNITS': 'W m-2',
-        'missing_value' : '',
-        'actual_range': '',
-        'instrument': ''
+        'missing_value' : 'NaN',
+        'actual_range': '0,1000',
+        'INSTRUMENT': 'CMP21'
     },
 
     'UV':{
-        'SHORTNAME': '',
-        'VariableName': '',
-        'LONGNAME': 'Ultraviolet radiation',
-        'standard_name': '',
+        'SHORTNAME': 'UV',
+        'VariableName': 'UV',
+        'LONGNAME': 'Ground level Ultraviolet radiation',
+        'standard_name': 'Total Ultraviolet Radiation',
         'UNITS': 'W m-2',
-        'missing_value' : '',
-        'actual_range': '',
-        'instrument': ''
+        'missing_value' : 'NaN',
+        'actual_range': '0,50',
+        'INSTRUMENT': 'SUV5'
     },
 
     'Rlw':{
-        'SHORTNAME': '',
-        'VariableName': 'rlut',
-        'LONGNAME': 'Top-of-atmosphere outgoing long wave radiation',
-        'standard_name': 'toa_outgoing_longwave_flux',
+        'SHORTNAME': 'Rlw',
+        'VariableName': 'rldt',
+        'LONGNAME': 'Ground level incoming long wave radiation',
+        'standard_name': 'Ground level_incoming_longwave_flux',
         'UNITS': 'W m-2',
-        'missing_value' : '',
-        'actual_range': '',
-        'instrument': ''
+        'missing_value' : 'NaN',
+        'actual_range': '150,350',
+        'INSTRUMENT': 'CGR3'
     },
 
     'Rnet':{
-       'SHORTNAME': '',
-       'VariableName': '',
-        'LONGNAME': 'netradiation',
+       'SHORTNAME': 'Rnet',
+       'VariableName': 'Net Radiation',
+        'LONGNAME': 'Ground level Net Radiation',
         'standard_name': '',
         'UNITS': 'W m-2',
-        'missing_value' : '',
-        'actual_range': '',
-        'instrument': ''  
+        'missing_value' : 'NaN',
+        'actual_range': '-100,800',
+        'INSTRUMENT': 'N/A'  
     },
 
     'WSmax':{
-        'SHORTNAME': '',
-        'VariableName': '',
-        'LONGNAME': '',
-        'standard_name': '',
+        'SHORTNAME': 'WSmax',
+        'VariableName': 'WSmax',
+        'LONGNAME': 'Maximum Wind Speed',
+        'standard_name': 'Max Wind speed',
         'UNITS': 'm s-1',
-        'missing_value' : '',
-        'actual_range': '',
-        'instrument': ''  
+        'missing_value' : 'NaN',
+        'actual_range': '0, 75',
+        'INSTRUMENT': '05108'  
     },
     
      'Tmax':{
-        'SHORTNAME': '',
-        'VariableName': '',
-        'LONGNAME': '',
-        'standard_name': '',
+        'SHORTNAME': 'Tmax',
+        'VariableName': 'Tmax',
+        'LONGNAME': 'Maximum air temperature',
+        'standard_name': 'Maximum air temperature',
         'UNITS': 'degC',
-        'missing_value' : '',
-        'actual_range': '',
-        'instrument': ''  
+        'missing_value' : 'NaN',
+        'actual_range': '-30,20',
+        'INSTRUMENT': 'HMP155'  
     },
       'Tmin':{
-        'SHORTNAME': '',
-        'VariableName': '',
-        'LONGNAME': '',
-        'standard_name': '',
+        'SHORTNAME': 'Tmin',
+        'VariableName': 'Tmin',
+        'LONGNAME': 'Minimum air temperature',
+        'standard_name': 'Minimum air temperature',
         'UNITS': 'degC',
-        'missing_value' : '',
-        'actual_range': '',
-        'instrument': ''  
+        'missing_value' : 'NaN',
+        'actual_range': '-30,20',
+        'INSTRUMENT': 'HMP155'  
     },
 
       'RHmin':{
-       'SHORTNAME': '',
-       'VariableName': '',
-        'LONGNAME': '',
-        'standard_name': '',
-        'UNITS': '1',
-        'missing_value' : '',
-        'actual_range': '',
-        'instrument': ''  
+       'SHORTNAME': 'RHmin',
+       'VariableName': 'RHmin',
+        'LONGNAME': 'Minimum Relative Humidity',
+        'standard_name': 'Minimum RH',
+        'UNITS': '%',
+        'missing_value' : 'NaN',
+        'actual_range': '0,100',
+        'INSTRUMENT': 'HMP155'  
     },
     'Pmax': {
-       'SHORTNAME': '',
-       'VariableName': '',
-        'LONGNAME': '',
-        'standard_name': '',
-        'UNITS': 'hpa',
-        'missing_value' : '',
-        'actual_range': '',
-        'instrument': ''  
+       'SHORTNAME': 'Pmax',
+       'VariableName': 'Pmax',
+        'LONGNAME': 'Maximum Air Pressure',
+        'standard_name': 'Maximum Air Pressure',
+        'UNITS': 'hPa',
+        'missing_value' : 'NaN',
+        'actual_range': '920,1040',
+        'INSTRUMENT': 'PTB110'  
     },
 
     'Pmin':{
-       'SHORTNAME': '',
-       'VariableName': '',
-        'LONGNAME': '',
-        'standard_name': '',
-        'UNITS': 'hpa',
-        'missing_value' : '',
-        'actual_range': '',
-        'instrument': ''  
+       'SHORTNAME': 'Pmin',
+       'VariableName': 'Pmin',
+        'LONGNAME': 'Minimum Air Pressure',
+        'standard_name': 'Minimum Air Pressure',
+        'UNITS': 'hPa',
+        'missing_value' : 'NaN',
+        'actual_range': '920,1040',
+        'INSTRUMENT': 'PTB110'  
     },
     'UVA':{
-       'SHORTNAME': '',
-       'VariableName': '',
-        'LONGNAME': '',
-        'standard_name': '',
+       'SHORTNAME': 'UVA',
+       'VariableName': 'UV-A',
+        'LONGNAME': 'Ground level incoming UV-A radiation',
+        'standard_name': 'UV-A Radiation',
         'UNITS': 'W m-2',
-        'missing_value' : '',
-        'actual_range': '',
-        'instrument': ''  
+        'missing_value' : 'NaN',
+        'actual_range': '0,50',
+        'INSTRUMENT': 'SUVA'  
     },
 
     'UVB (time + 20var)':{
-       'SHORTNAME': '',
-       'VariableName': '',
-        'LONGNAME': '',
-        'standard_name': '',
+       'SHORTNAME': 'UVB',
+       'VariableName': 'UV-B',
+        'LONGNAME': 'Ground level incoming UV-B radiation',
+        'standard_name': 'UV-B Radiation',
         'UNITS': 'W m-2',
-        'missing_value' : '',
-        'actual_range': '',
-        'instrument': ''  
+        'missing_value' : 'NaN',
+        'actual_range': '0,5',
+        'INSTRUMENT': 'SUVB'  
     }
     }
 

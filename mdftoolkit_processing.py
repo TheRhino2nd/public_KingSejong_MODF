@@ -83,13 +83,20 @@ def write_variable_attributes(metadata_dict,merged_model_data_file):
         if attribute_content is not None: merged_model_data_file.update_variable_atts(mdf_shortname,{"units" : attribute_content})
         if parameter=="LATITUDE" or parameter=="LONGITUDE": merged_model_data_file.update_variable_atts(mdf_shortname,{"units" : "°"})# fix lon/lat units because they are not contained in raw files
 
+        print('Attribute content for LONGNAME')
         attribute_content = shortname + " (" + metadata_dict[parameter].get("LONGNAME") + ")"
+        print('Checking if attribute contenet is none or not :', attribute_content)
         if attribute_content is not None: merged_model_data_file.update_variable_atts(mdf_shortname,{"original_name" : attribute_content})
 
+        print('Checking attribute contnet for Reference:')
         attribute_content = metadata_dict[parameter].get("REFERENCE")
+        print('Checking attribute content is None or not:', attribute_content)
         if attribute_content is not None: merged_model_data_file.update_variable_atts(mdf_shortname,{"references" : attribute_content})
 
-        attribute_content = metadata_dict[parameter].get("METHOD")
+
+        print('Checking attribute contnet for Instrument:')
+        attribute_content = metadata_dict[parameter].get("INSTRUMENT")
+        print('Checking if attribute contnet is NONE or not:', attribute_content)
         if attribute_content is not None: merged_model_data_file.update_variable_atts(mdf_shortname,{"instrument" : attribute_content})
 
         attribute_content = metadata_dict[parameter].get("COMMENT")

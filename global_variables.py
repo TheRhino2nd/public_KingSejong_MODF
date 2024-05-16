@@ -28,9 +28,9 @@ def init():
 
 
     metadata_default_global_entries = {
-                    "Institution"               :   "CIIMAR",
-                    "Station_Scientist"         :   "Irina Gorodetskaya",
-                    "Email_Scientist"           :   "",
+                    "Institution"               :   "Korea Polar Research Institute",
+                    "Station_Scientist"         :   "Sang-Jong Park",
+                    "Email_Scientist"           :   "sangjong@kopri.re.kr",
                     "Status"                    :   "",
                     "License"                   :   "",
                     "Abstract"                  :   "",
@@ -40,18 +40,19 @@ def init():
                     "Other version"             :   "",
                     "Metadata_Link"             :   "",
                     "Number"                    :   "",
-                    "Station_Elevation"         :   "00",   # unit=m
-                    "Station_Longitude"         :   "00",   # unit=degrees_north
-                    "Station_Latitude"          :   "00",   # unit=degrees_east
+                    "Station_Elevation"         :   "7.1",   # unit=m
+                    "Station_Longitude"         :   "-58.7905",   # unit=degrees_east
+                    "Station_Latitude"          :   "-62.2252",   # unit=degrees_north
                     "Station_Location_Source"   :   "satellite positioning measurement",
                     "Station_Location"          :   "King George Island, Antarctic Peninsula",
-                    "Station_Surface_Type"      :   "",
+                    "Station_Surface_Type"      :   "Coastal",
                     "Station_Topography_Type"   :   "flat, rural",
                     "Station_URI"               :   "",
                     "Station_BSRN_no"           :   "00",
                     "MODF_creator_names"        :   "Irina Gorodetskaya",
                     "MODF_creator_email"        :   ""
-    } # This is transferred into the global variables of the MODF file. 
+    } # This is transferred into the global variables of the MODF file.
+                    
     print("metadata_global_entries : done ")
 # ---------------------------------- End User Input -------------------------------------------------------------------
     

@@ -1,4 +1,23 @@
 # This part of code will read the dataframe:
+# It will prepare the dataframe for the mdf-toolkit
+
+# Functions used for this part of the code:
+# rename_columns_according_to_HK_conventions
+# conver_data_time_format_to_NetCDF_time_format
+# calculate_east_north_wind_component
+# rename_columns_according_to_HK_conventions
+# data_processing
+#
+# data_processing function reads the data file, connects the correct 
+# metadata file, checks if wind variables are presend(WS and WD)
+# creates eastwind and westwind variables(ua, va),
+# Find datetime format and convert to pandas/NetCDF format
+
+
+
+
+
+# ---------------------------------------------------------------
 
 import pandas
 import datetime
@@ -165,7 +184,7 @@ def data_processing(data_filename, metadata_dict, translation_map):
         uuu= king_sejong_data.apply(lambda row: calculate_east_north_wind_components(row),axis=1)
         
         print('here we print uuu and uuu.shape:')
-        print('OKKKKkkkk: ',uuu,uuu.shape)
+        print('uuu and uuu.shape: ',uuu,uuu.shape)
 
         print('going to add wind_east and wind_north to the king sejong data as new columns:')
         #king_sejong_data["wind_east", "wind_north"]=uuu
